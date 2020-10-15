@@ -4,15 +4,19 @@
 #define max_rlen 100
 
 int main()
+{
+int scelta;
+char str[max_rlen];//creiamo un array di dimensione max_rlen
 
-printf("scegliere 1 per codificare 2 per decodificare")
-scanf("%d",scelta)
+printf("scegliere 1 per codificare 2 per decodificare \n");
+scanf("%d", &scelta);
+
 switch (scelta)
 {
 case 1 :
     {
 int count=1;
-char str[max_rlen];                         //creiamo un array di dimensione max_rlen
+                        
 
 printf("inserire un serie di lettere ");
 scanf("%s",str);
@@ -30,6 +34,7 @@ for ( int i = 0; i < n; i++)
 
 printf("%d", count);
 count = 1;
+
 printf("%c", str[i]);
 
 }
@@ -40,20 +45,29 @@ case 2:
 
 {
     printf("inserire un serie di lettere e numeri ");
-    scanf("%s",str)
+    scanf("%s",str);
 
-    int n =strlen(str); 
+    int  n, k, num; 
+    char lett;
+
+    n = strlen(str) ;
 
     for ( int i = 0; i < n; i++)
     {
-        if (/* condition */)
+        if (atoi(&str[i]) > 0 && atoi(&str[i]) <= 9)
         {
-            /* code */
+            num= atoi(&str[i]);
         }
-        
-    }
-    
-    
+        else
+        {
+           for (int k = 0; k < num; k++)
+           {
+               printf("%c", str[i]);
+           } 
+        }      
+    }   
 }
     break;
+}
+
 }
