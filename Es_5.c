@@ -48,18 +48,18 @@ Canzone playlist[NSONG];
   while(fgets(riga, max, file1)) {
 
     field=strtok(riga,",");
-    playlist[counter].numero =atoi(field);
+    (playlist+counter).numero =atoi(field);
 
     field=strtok(NULL,",");
-    strcpy(playlist[counter].titolo,field);
+    strcpy(playlist+counter).titolo,field);
 
     field=strtok(NULL,",");
-    strcpy(playlist[counter].artista,field);
+    strcpy(playlist+counter).artista,field);
     
 
-    printf("numero: %d\n",playlist[counter].numero);
-    printf("titolo: %s\n",playlist[counter].titolo);
-    printf("artista: %s\n",playlist[counter].artista);
+    printf("numero: %d\n",(playlist+counter).numero);
+    printf("titolo: %s\n",(playlist+counter).titolo);
+    printf("artista: %s\n",(playlist+counter).artista);
 
     counter++;
   }
@@ -73,9 +73,9 @@ int num[N];
  	srand(time(0)); //inizializza il generatore sull'ora attuale dell'elaboratore time(0)
   
  	for(i=0;i<N;i++) {
-    	     num[i]=rand()%10;
+    	     (num+i)=rand()%10;
     	     for(j=0;j<i;j++) {
-       		if(num[i]==num[j]) {
+       		if((num+i)==(num+j)) {
             	   i--;
             	   break;
             }
@@ -83,8 +83,8 @@ int num[N];
        }
   
  	for(i=0;i<N;i++){
-           printf("numero: %d\n",playlist[num[i]].numero);
-           printf("titolo: %s\n",playlist[num[i]].titolo);
-           printf("artista: %s\n",playlist[num[i]].artista);
+           printf("numero: %d\n",(playlist+(num+i)).numero);
+           printf("titolo: %s\n",(playlist+(num+i)).titolo);
+           printf("artista: %s\n",(playlist+(num+i)).artista);
            }
 }  	   
