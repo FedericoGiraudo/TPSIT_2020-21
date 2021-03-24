@@ -79,7 +79,7 @@ int main(){
    // rubrica->num_inseriti = 0;
 
     printf("inserire\n 1)per inserire numero\n 2)trovare numero\n 3)stampare rubrica\n ");
-    scanf("%d",input);
+    scanf("%d",&input);
 
     switch (input )
     {
